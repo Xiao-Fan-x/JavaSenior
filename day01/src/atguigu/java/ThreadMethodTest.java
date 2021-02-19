@@ -22,35 +22,27 @@ package atguigu.java;
 //   说明：高优先级的线程要抢占低优先级线程cpu的执行权。但是只是从概率上讲，高优先级的线程高概率的情况下
 //   被执行。并不意味着只有当高优先级的线程执行完以后，低优先级的线程才执行。
 
-
 class HelloThread extends Thread{
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
             if(i % 2 == 0){
-
 //                try {
 //                    sleep(10);
 //                } catch (InterruptedException e) {
 //                    e.printStackTrace();
 //                }
-
                 System.out.println(Thread.currentThread().getName() + ":" + Thread.currentThread().getPriority() + ":" + i);
             }
-
 //            if(i % 20 == 0){
 //                yield();
 //            }
-
         }
-
     }
-
     public HelloThread(String name){
         super(name);
     }
 }
-
 
 public class ThreadMethodTest {
     public static void main(String[] args) {
@@ -71,7 +63,6 @@ public class ThreadMethodTest {
             if(i % 2 == 0){
                 System.out.println(Thread.currentThread().getName() + ":" + Thread.currentThread().getPriority() + ":" + i);
             }
-
 //            if(i == 20){
 //                try {
 //                    h1.join();
@@ -79,10 +70,7 @@ public class ThreadMethodTest {
 //                    e.printStackTrace();
 //                }
 //            }
-
         }
-
 //        System.out.println(h1.isAlive());
-
     }
 }
