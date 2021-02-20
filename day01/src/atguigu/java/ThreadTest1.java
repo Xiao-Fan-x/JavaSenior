@@ -20,6 +20,7 @@ package atguigu.java;
  * @author shkstart
  * @create 2019-02-13 下午 4:34
  */
+
 //1. 创建一个实现了Runnable接口的类
 class MThread implements Runnable{
 
@@ -30,11 +31,9 @@ class MThread implements Runnable{
             if(i % 2 == 0){
                 System.out.println(Thread.currentThread().getName() + ":" + i);
             }
-
         }
     }
 }
-
 
 public class ThreadTest1 {
     public static void main(String[] args) {
@@ -46,6 +45,9 @@ public class ThreadTest1 {
         //5. 通过Thread类的对象调用start():① 启动线程 ②调用当前线程的run()-->调用了Runnable类型的target的run()
         t1.start();
 
+Thread t3 = new Thread(new MThread());
+t3.setName("xinacheng3");
+t3.start();
         //再启动一个线程，遍历100以内的偶数
         Thread t2 = new Thread(mThread);
         t2.setName("线程2");

@@ -43,7 +43,6 @@ public class ThreadTest {
         MyThread t2 = new MyThread();
         t2.start();
 
-
         //如下操作仍然是在main线程中执行的。
         for (int i = 0; i < 100; i++) {
             if(i % 2 == 0){
@@ -51,5 +50,4 @@ public class ThreadTest {
             }
         }
     }
-
 }
