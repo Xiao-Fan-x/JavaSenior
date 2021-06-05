@@ -55,10 +55,12 @@ public class ThreadMethodTest {
 
         h1.start();
 
-        //给主线程命名
+        //给主线程命名，并降低优先级
         Thread.currentThread().setName("主线程");
         Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
 
+
+        //主程序
         for (int i = 0; i < 100; i++) {
             if(i % 2 == 0){
                 System.out.println(Thread.currentThread().getName() + ":" + Thread.currentThread().getPriority() + ":" + i);
