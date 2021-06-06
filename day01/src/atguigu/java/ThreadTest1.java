@@ -45,9 +45,9 @@ public class ThreadTest1 {
         //5. 通过Thread类的对象调用start():① 启动线程 ②调用当前线程的run()-->调用了Runnable类型的target的run()
         t1.start();
 
-Thread t3 = new Thread(new MThread());
-t3.setName("xinacheng3");
-t3.start();
+        Thread t3 = new Thread(new MThread());
+        t3.setName("xinacheng3");
+        t3.start();
         //再启动一个线程，遍历100以内的偶数
         Thread t2 = new Thread(mThread);
         t2.setName("线程2");
