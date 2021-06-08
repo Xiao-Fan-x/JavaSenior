@@ -8,7 +8,6 @@ package atguigu.java;
  * @create 2019-02-13 下午 4:47
  */
 class Window1 implements Runnable{
-
     private int ticket = 100;
 
     @Override
