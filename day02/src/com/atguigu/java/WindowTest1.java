@@ -15,8 +15,8 @@ package com.atguigu.java;
  *
  *   synchronized(同步监视器){
  *      //需要被同步的代码
- *
  *   }
+ *
  *  说明：1.操作共享数据的代码，即为需要被同步的代码。  -->不能包含代码多了，也不能包含代码少了。
  *       2.共享数据：多个线程共同操作的变量。比如：ticket就是共享数据。
  *       3.同步监视器，俗称：锁。任何一个类的对象，都可以充当锁。
@@ -43,18 +43,13 @@ class Window1 implements Runnable{
 //        Object obj = new Object();
         while(true){
             synchronized (this){//此时的this:唯一的Window1的对象   //方式二：synchronized (dog) {
-
                 if (ticket > 0) {
-
                     try {
                         Thread.sleep(100);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-
                     System.out.println(Thread.currentThread().getName() + ":卖票，票号为：" + ticket);
-
-
                     ticket--;
                 } else {
                     break;
@@ -63,7 +58,6 @@ class Window1 implements Runnable{
         }
     }
 }
-
 
 public class WindowTest1 {
     public static void main(String[] args) {
