@@ -42,7 +42,10 @@ class Window1 implements Runnable{
     public void run() {
 //        Object obj = new Object();
         while(true){
-            synchronized (this){//此时的this:唯一的Window1的对象   //方式二：synchronized (dog) {
+            synchronized (this){
+                //此时的this:唯一的Window1的对象
+//                 方式二：synchronized (dog) {
+//            synchronized (Window1.class) {
                 if (ticket > 0) {
                     try {
                         Thread.sleep(100);

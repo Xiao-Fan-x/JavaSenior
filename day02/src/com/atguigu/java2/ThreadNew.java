@@ -41,7 +41,7 @@ public class ThreadNew {
         FutureTask futureTask = new FutureTask(numThread);
         //5.将FutureTask的对象作为参数传递到Thread类的构造器中，创建Thread对象，并调用start()
         new Thread(futureTask).start();
-
+//        futureTask.run();
         try {
             //6.获取Callable中call方法的返回值
             //get()返回值即为FutureTask构造器参数Callable实现类重写的call()的返回值。

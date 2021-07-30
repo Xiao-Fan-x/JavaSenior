@@ -28,41 +28,31 @@ class Number implements Runnable{
     private Object obj = new Object();
     @Override
     public void run() {
-
         while(true){
-
             synchronized (obj) {
-
                 obj.notify();
-
                 if(number <= 100){
-
                     try {
                         Thread.sleep(10);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-
                     System.out.println(Thread.currentThread().getName() + ":" + number);
                     number++;
-
                     try {
                         //使得调用如下wait()方法的线程进入阻塞状态
+                        System.out.println("-----");
                         obj.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-
                 }else{
                     break;
                 }
             }
-
         }
-
     }
 }
-
 
 public class CommunicationTest {
     public static void main(String[] args) {

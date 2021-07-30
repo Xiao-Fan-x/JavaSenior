@@ -21,24 +21,19 @@ class Window3 implements Runnable {
     @Override
     public void run() {
         while (true) {
-
             show();
         }
     }
 
     private synchronized void show(){//同步监视器：this
         //synchronized (this){
-
             if (ticket > 0) {
-
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
                 System.out.println(Thread.currentThread().getName() + ":卖票，票号为：" + ticket);
-
                 ticket--;
             }
         //}

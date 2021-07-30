@@ -61,5 +61,6 @@ public class DateTimeTest {
         //返回当前时间与1970年1月1日0时0分0秒之间以毫秒为单位的时间差。
         //称为时间戳
         System.out.println(time);
+        System.out.println(new java.sql.Date(time));
     }
 }

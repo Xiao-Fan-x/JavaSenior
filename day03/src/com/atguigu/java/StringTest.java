@@ -77,7 +77,7 @@ public class StringTest {
         System.out.println(s1 == s2);//true
         System.out.println(s1 == s3);//false
         System.out.println(s1 == s4);//false
-        System.out.println(s3 == s4);//false
+        System.out.println(s3.equals(s4) );//false
 
         System.out.println("***********************");
         Person p1 = new Person("Tom",12);

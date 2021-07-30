@@ -18,6 +18,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author shkstart
  * @create 2019-02-15 下午 3:38
  */
+
 class Window implements Runnable{
 
     private int ticket = 100;
@@ -28,18 +29,15 @@ class Window implements Runnable{
     public void run() {
         while(true){
             try{
-
                 //2.调用锁定方法lock()
                 lock.lock();
 
                 if(ticket > 0){
-
                     try {
                         Thread.sleep(100);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-
                     System.out.println(Thread.currentThread().getName() + "：售票，票号为：" + ticket);
                     ticket--;
                 }else{
@@ -49,7 +47,6 @@ class Window implements Runnable{
                 //3.调用解锁方法：unlock()
                 lock.unlock();
             }
-
         }
     }
 }
